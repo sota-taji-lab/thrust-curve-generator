@@ -1,0 +1,44 @@
+2026-08-26 SweepRunner integration
+
+1. Added model_runner.py
+   - Shared non-UI run_case() interface for Streamlit and SweepRunner.
+   - Keeps the existing engine equations and MATLAB/CEA model.
+
+2. Added sweep_config.py
+   - Coarse = 100 valid simulations.
+   - Fine = 200 valid simulations.
+   - Pc = 270 to 300 psig.
+   - Fuel = 5 to 7 kg.
+   - Initial oxidizer mdot = 1.5 to 2.5 kg/s.
+   - Initial port diameter = 0.0946 to 0.1200 m.
+   - Grain OD fixed in SweepRunner at 5.75 in (0.14605 m).
+   - Grain length constraint = 0.80 to 1.02 m.
+   - Burn time constraint = 4.0 to 7.0 s.
+   - Tank pressure coupled in SweepRunner only: Pc + 118 psi.
+
+3. Added sweep_runner.py
+   - Latin Hypercube coarse/fine search.
+   - Geometry pre-filter before model execution.
+   - Total Impulse ranking.
+   - CSV checkpoints and ranked outputs.
+   - Fine bounds derived from Coarse top 10 with padding.
+   - Initial oxidizer mass is derived as an output from integrated consumption.
+   - Fine top 10 are re-run with sized LOX mass to verify coincident grain burnout / oxidizer depletion.
+
+4. Updated engine.py
+   - Adds termination_reason metadata to engine_result.
+   - Adds oxidizer_consumed_kg metadata.
+   - No thrust/regression/nozzle equations changed.
+
+5. Updated streamlit_app.py
+   - Uses shared model_runner.run_case().
+   - Manual Streamlit Tank Pressure remains independent/editable.
+   - Manual Streamlit Maximum Grain OD remains editable.
+   - Adds termination reason and oxidizer-consumed result details.
+
+6. Added Windows helper scripts
+   - run_sweep_coarse.ps1
+   - run_sweep_fine.ps1
+   - run_sweep_all.ps1
+
+7. Tank length remains fixed at 1.1684 m as in the previous merged version.

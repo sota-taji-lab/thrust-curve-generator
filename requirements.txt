@@ -1,0 +1,7 @@
+CoolProp
+matplotlib
+numpy
+pandas
+scipy
+matlabengine==25.2.2
+streamlit

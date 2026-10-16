@@ -1,0 +1,14 @@
+Hybrid Rocket Thrust Curve Generator - merged configuration
+
+Base: thrust-curve-generator(2) UI/program structure
+Numerical configuration restored from thrust-curve-generator(1):
+- C-star efficiency: 0.90
+- Ox tank mass-per-length expression includes +0.88513 kg/m term
+- Main/UI default engine, propellant, and vehicle mass-component values restored to (1)
+
+Requested changes:
+- Oxidizer tank length fixed at 1.1684 m (FIXED_OX_TANK_LENGTH in mass_component.py)
+- Maximum grain outer diameter is editable in Streamlit
+- Grain OD is passed per simulation and consistently affects grain length, burnout limit, and chamber mass-per-length
+
+The .venv directory is intentionally excluded from this delivery ZIP. Use requirements.txt / existing local environment.

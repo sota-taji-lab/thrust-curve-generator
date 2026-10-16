@@ -1,0 +1,40 @@
+# Local Python environments / caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# User-specific runtime state
+/user_settings/*
+!/user_settings/.gitkeep
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Generated simulation results
+/sweep_results/*
+!/sweep_results/.gitkeep
+/rse files/*
+!/rse files/.gitkeep
+*.log
+
+# Local historical backups (not used by the active application)
+/legacy/
+
+# CEA-side MATLAB input file; verify provenance/dependency before publishing
+/problem_struct.mat
+
+# Operating system / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
