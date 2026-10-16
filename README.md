@@ -81,9 +81,10 @@ The current search ranges, sample counts, constraints and random seed are define
 
 ## Further documentation
 
-- [Quick model manual](Hybrid_Thrust_Curve_Generator_Quick_Manual.md)
-- [SweepRunner operating guide](SWEEP_RUNNER_README.md)
-- [Streamlit quick user manual](Hybrid_Rocket_Thrust_Curve_Generator_Quick_User_Manual.pdf)
+- [Quick Model Manual](Hybrid_Thrust_Curve_Generator_Quick_Manual.md)
+
+For the latest sweep parameters, constraints, and
+sample counts, see `sweep_config.py`.
 
 ## Sharing and licensing
 
